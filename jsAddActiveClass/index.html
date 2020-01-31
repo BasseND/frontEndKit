@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <div class="parent">
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+        <span class="item-glossary">
+            <a href="#">Hello Clik me</a>
+        </span>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+
+            var navUl = [].slice.call(document.querySelectorAll('.parent > span'));
+            for (var y = 0; y < navUl.length; y++) {
+                navUl[y].addEventListener('click', checkLi);
+            }
+
+            function checkLi(event) {
+                if (event.target.tagName === 'A') {
+                    navUl.forEach(el => el.classList.remove('active'));
+                    event.currentTarget.classList.add('active');
+                }
+            }
+        })
+    
+    </script>
+</body>
+</html>
